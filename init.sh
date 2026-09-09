@@ -3,6 +3,7 @@ set -euo pipefail
 
 # Install nix
 # Enable flakes + the new nix CLI
+sudo chown $USERNAME ~/.config/
 mkdir -p ~/.config/nix
 echo "experimental-features = nix-command flakes" > ~/.config/nix/nix.conf
 
