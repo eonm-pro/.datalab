@@ -6,7 +6,7 @@ Environnement Nix prêt à l'emploi regroupant des outils en ligne de commande p
 
 [Nix](https://nixos.org/download.html) avec les *flakes* activées (`experimental-features = nix-command flakes`).
 
-Pour l'installation dans Onyxia voir la section [Installation dans Onyxia](#installation-dans-onyxia).
+Pour l'installation dans Onyxia voir la section [Installation dans Onyxia](#installation-dans-onyxia-httpsdatalabsspcloudfr).
 
 ## Utilisation
 
