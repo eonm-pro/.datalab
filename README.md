@@ -29,11 +29,20 @@ En cliquant sur ce [lien](https://datalab.sspcloud.fr/launcher/ide/jupyter-pytho
 
 Ou manuellement, en configurant le script d'initialisation `init.sh` qui installe Nix, active les flakes, puis clone `datalab` :
 
-Au lancement du service, en mode **Formulaire**, dépliez **« Initialization scripts »** :
+Au lancement du service, en mode **Formulaire**
 
-| Champ                               | Valeur                                                           |
-|-------------------------------------|------------------------------------------------------------------|
-| Use a custom script (URL)           | `https://raw.githubusercontent.com/eonm-pro/datalab/main/init.sh`|
+1. Dépliez **« Initialization scripts »** :
+
+  | Champ                               | Valeur                                                           |
+  |-------------------------------------|------------------------------------------------------------------|
+  | Use a custom script (URL)           | `https://raw.githubusercontent.com/eonm-pro/datalab/main/init.sh`|
+
+2. Dépliez **« Git** _git user configuration_ **»** :
+
+  | Champ                               | Valeur                                                           |
+  |-------------------------------------|------------------------------------------------------------------|
+  | **Repository** *Repository url*     | `https://www.github.com/eonm-pro/datalab` (ou votre dépôt)       |
+
 
 Une fois le service lancé, dans un terminal :
 
