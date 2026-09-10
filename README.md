@@ -34,7 +34,7 @@ nix develop              # shell de développement, mêmes options
 
 ## Installation dans Onyxia (https://datalab.sspcloud.fr)
 
-En utilisant cliquant sur ce [lien](https://datalab.sspcloud.fr/launcher/ide/jupyter-python?name=jupyter-python&version=2.5.2&s3=default&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2Feonm-pro%2Fdatalab%2Frefs%2Fheads%2Fmain%2Finit.sh»&git.enabled=false&autoLaunch=true).
+En utilisant cliquant sur ce [lien](https://datalab.sspcloud.fr/launcher/ide/jupyter-python?name=Datalab&version=2.5.2&s3=default&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2Feonm-pro%2Fdatalab%2Frefs%2Fheads%2Fmain%2Finit.sh»&git.name=«»&git.email=«»&git.repository=«https%3A%2F%2Fgithub.com%2Feonm-pro%2Fdatalab»&autoLaunch=false).
 
 Ou sur [Onyxia](https://datalab.sspcloud.fr) (SSP Cloud), les services (VSCode, Jupyter, RStudio...) démarrent sans Nix préinstallé. Le script `init.sh` l'installe, active les flakes, puis clone `datalab`.
 
