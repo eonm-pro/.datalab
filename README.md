@@ -32,9 +32,11 @@ nix develop              # shell de développement, mêmes options
 | `fetch`       | `curl`                                          |
 | `misc`        | `pv`, `ncdu`                                    |
 
-## Installation dans Onyxia
+## Installation dans Onyxia (https://datalab.sspcloud.fr)
 
-Sur [Onyxia](https://datalab.sspcloud.fr) (SSP Cloud), les services (VSCode, Jupyter, RStudio...) démarrent sans Nix préinstallé. Le script `init.sh` l'installe, active les flakes, puis clone `datalab`.
+En utilisant cliquant sur ce [lien](https://datalab.sspcloud.fr/launcher/ide/jupyter-python?name=jupyter-python&version=2.5.2&s3=default&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2Feonm-pro%2Fdatalab%2Frefs%2Fheads%2Fmain%2Finit.sh»&git.enabled=false&autoLaunch=true).
+
+Ou sur [Onyxia](https://datalab.sspcloud.fr) (SSP Cloud), les services (VSCode, Jupyter, RStudio...) démarrent sans Nix préinstallé. Le script `init.sh` l'installe, active les flakes, puis clone `datalab`.
 
 Au lancement du service, en mode **Formulaire**, dépliez **« Initialization scripts »** :
 
