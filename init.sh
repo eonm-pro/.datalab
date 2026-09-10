@@ -23,4 +23,4 @@ nix-channel --update
 echo 'export PATH="$HOME/.nix-profile/bin:$PATH"' >> ~/.bashrc
 echo 'export PATH="$HOME/.nix-profile/bin:$PATH"' >> ~/.profile
 
-nix registry add datalab "$WORKSPACE_DIR/$(basename ${GIT_REPOSITORY:-datalab})"'
+nix registry add datalab path:/"$WORKSPACE_DIR/$(basename ${GIT_REPOSITORY:-datalab})"
