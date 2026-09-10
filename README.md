@@ -58,6 +58,12 @@ nix shell .#xml .#json   # active uniquement les catégories choisies (ici xml e
 nix develop              # shell de développement, mêmes options
 ```
 
+Sur Onyxia il est possible d'utiliser directement la variable `$DATALAB`, sans entrer préalablement dans la copie locale du dépôt `datalab`, pour activer un ou plusieurs modules :
+
+```sh
+nix shell $DATALAB#xml $DATALAB#json
+```
+
 ## Outils par module
 
 Chaque catégorie ci-dessous correspond à un module indépendant, activable seul ou combiné avec d'autres.
