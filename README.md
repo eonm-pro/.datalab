@@ -2,6 +2,8 @@
 
 Environnement Nix prêt à l'emploi regroupant des outils en ligne de commande pour manipuler des données (SQL, JSON, YAML, XML, CSV, compression, téléchargement...), organisés par catégories.
 
+Ce projet propose un environnement reproductible et isolé pour la manipulation de données en ligne de commande, basé sur Nix. Le lockfile garantit que les outils (et leurs versions exactes) seront identiques sur toute machine, sans nécessiter de conteneur, tout en restant compatible avec des environnements déjà conteneurisés comme Onyxia (SSP Cloud). Idéal pour le travail collaboratif ou la pérennisation des pipelines de données.
+
 ## Prérequis
 
 [Nix](https://nixos.org/download.html) avec les *flakes* activées (`experimental-features = nix-command flakes`).
