@@ -37,7 +37,7 @@ Au lancement du service, en mode **Formulaire**
 
   | Champ                               | Valeur                                                            |
   |-------------------------------------|-------------------------------------------------------------------|
-  | Use a custom script (URL)           | `https://raw.githubusercontent.com/eonm-pro/.datalab/main/init.sh`|
+  | **Use a custom script (URL)**       | `https://raw.githubusercontent.com/eonm-pro/.datalab/main/init.sh`|
 
 2. Dépliez **« Git** _git user configuration_ **»** :
 
