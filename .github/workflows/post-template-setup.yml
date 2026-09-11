@@ -22,10 +22,10 @@ jobs:
 
           # 2. Find and replace placeholders in your targeted files
           # (Add or modify the file paths below as needed)
-          sed -i "s/%.datalab%/$NEW_PROJECT_NAME/g" init.sh
-          sed -i "s/%eonm-pro%/$NEW_AUTHOR_NAME/g" init.sh
-          sed -i "s/%.datalab%/$NEW_PROJECT_NAME/g" README.md
-          sed -i "s/%eonm-pro%/$NEW_AUTHOR_NAME/g" README.md
+          sed -i "s/.datalab/$NEW_PROJECT_NAME/g" init.sh
+          sed -i "s/eonm-pro/$NEW_AUTHOR_NAME/g" init.sh
+          sed -i "s/.datalab/$NEW_PROJECT_NAME/g" README.md
+          sed -i "s/eonm-pro/$NEW_AUTHOR_NAME/g" README.md
 
       - name: Clean Up and Commit Changes
         run: |
