@@ -62,6 +62,12 @@ Sur Onyxia il est possible d'utiliser directement le registre `datalab`, sans en
 nix shell datalab#xml datalab#json
 ```
 
+Pour reproduire ce comportement sur une machine ayant Nix, il suffit d'ajouter le dépôt du datalab au registry nix :
+
+```sh
+nix registry add datalab /chemin/absolu/vers/le/datalab
+```
+
 ## Outils par module
 
 Chaque catégorie ci-dessous correspond à un module indépendant, activable seul ou combiné avec d'autres.
