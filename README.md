@@ -46,11 +46,7 @@ Au lancement du service, en mode **Formulaire**
   | **Repository** *Repository url*     | `https://www.github.com/eonm-pro/.datalab` (ou votre dépôt)      |
 
 
-Une fois le service lancé, dans un terminal :
-
-```bash
-cd ~/work/.datalab
-```
+Par défaut, sur Onyxia, le datalab est situé dans un dossier caché : `~/work/.datalab`
 
 ## Utilisation
 
