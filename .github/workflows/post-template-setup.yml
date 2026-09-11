@@ -38,6 +38,9 @@ jobs:
           
           # Remove this setup workflow file so it only runs once (Self-destruct)
           git rm .github/workflows/post-template-setup.yml
+
+          # Remove the LICENSE file. The LICENSE is the one of the template
+          git rm LICENSE
           
           git commit -m "chore: initial template customization and cleanup"
           git push
