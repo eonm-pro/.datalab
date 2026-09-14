@@ -109,7 +109,7 @@
 
           # Data visualization
           dataviz = with pkgs; [
-            vl-convert
+            python314Packages.vl-convert-python
             youplot
             gnuplot
           ];
