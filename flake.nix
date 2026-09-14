@@ -23,7 +23,6 @@
 
           database = with pkgs; [
             postgresql
-            mysqlClient
             redis
           ];
 
