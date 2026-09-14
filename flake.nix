@@ -13,20 +13,31 @@
         pkgs = import nixpkgs { inherit system; };
         pkgs-stable = import nixpkgs-stable { inherit system; };
 
-        # Each attr here becomes `nix shell .#<name>` / `nix develop .#<name>`.
         categories = {
+
+          # SQL engines and database clients
           sql = with pkgs; [
             duckdb
             sqlite
           ];
 
+          database = with pkgs; [
+            postgresql
+            mysqlClient
+            redis
+          ];
+
+          # Structured data formats
           json = with pkgs; [
             jq
             jqp
+            jless
+            check-jsonschema
           ];
 
           yaml = with pkgs; [
             yq-go
+            check-jsonschema
           ];
 
           xml = with pkgs; [
@@ -43,30 +54,104 @@
             miller
           ];
 
+          # Text manipulation and search
+          text = with pkgs; [
+            gawk
+            sd
+            choose
+            moreutils
+          ];
+
+          search = with pkgs; [
+            ripgrep
+            fd
+          ];
+
+          # Network I/O and data transfer
+          network = with pkgs; [
+            curl
+            wget
+            aria2
+            rsync
+            httpie
+            xh
+          ];
+
+          # Object storage and S3-compatible services
+          object-storage = with pkgs; [
+            awscli2
+            rclone
+            s3cmd
+            minio-client
+          ];
+
+          # Geospatial data
+          geo = with pkgs; [
+            gdal
+            proj
+          ];
+
+          # Cryptography and secure data handling
+          crypto = with pkgs; [
+            openssl
+            gnupg
+            age
+          ];
+
+          # Documents, publishing, and technical writing
+          docs = with pkgs; [
+            pandoc
+            glow
+            typst
+
+            # Scheme-medium keeps the closure manageable.
+            texlive.combined.scheme-medium
+          ];
+
+          # Data visualization
+          dataviz = with pkgs; [
+            vl-convert
+            youplot
+            gnuplot
+          ];
+
+          # Cloud-specific tooling
+          cloud = with pkgs; [
+            awscli2
+            rclone
+          ];
+
+          # Compression and archival
           compression = with pkgs; [
             gzip
             xz
             bzip2
             lz4
+            zstd
+            p7zip
             unzip
             zip
             gnutar
           ];
 
-          fetch = with pkgs; [
-            curl
+          # System utilities useful in data workflows
+          system = with pkgs; [
+            pv
+            parallel
+            time
+            htop
           ];
 
           misc = with pkgs; [
-            pv
-            ncdu
+            tree
           ];
         };
 
-        mkEnv = name: paths: pkgs.buildEnv {
-          name = "datalab-${name}";
-          inherit paths;
-        };
+        mkEnv = name: paths:
+          pkgs.buildEnv {
+            name = "datalab-${name}";
+            inherit paths;
+          };
 
         categoryPackages = pkgs.lib.mapAttrs mkEnv categories;
 
@@ -81,29 +166,39 @@
           |____/ \__,_|\__\__,_|_____\__,_|_.__/
 
           BANNER
+
           echo "categories: ${builtins.concatStringsSep ", " (builtins.attrNames categories)}"
-          echo "try:  nix shell .#sql .#csv"
+          echo
+          echo "Examples:"
+          echo "  nix shell .#json"
+          echo "  nix shell .#sql .#csv"
+          echo "  nix develop .#network"
           echo
         '';
+
       in
       {
         packages = categoryPackages // {
-          # `nix shell .#default` / `nix shell` (no arg) -> everything
           default = mkEnv "all" allTools;
         };
 
-        devShells = pkgs.lib.mapAttrs
-          (name: env: pkgs.mkShell {
-            name = "datalab-${name}";
-            buildInputs = [ env ];
-            shellHook = banner;
-          })
-          categoryPackages // {
+        devShells =
+          pkgs.lib.mapAttrs
+            (name: env:
+              pkgs.mkShell {
+                name = "datalab-${name}";
+                packages = [ env ];
+                shellHook = banner;
+              }
+            )
+            categoryPackages
+          // {
             default = pkgs.mkShell {
               name = "datalab";
-              buildInputs = allTools;
+              packages = allTools;
               shellHook = banner;
             };
           };
-      });
+      }
+    );
 }
