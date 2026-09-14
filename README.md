@@ -71,14 +71,25 @@ nix registry add datalab /chemin/absolu/vers/le/datalab
 ## Outils par module
 
 Chaque catégorie ci-dessous correspond à un module indépendant, activable seul ou combiné avec d'autres.
+Voici le tableau mis à jour, aligné exactement sur les catégories actuelles du flake :
 
-| Module        | Outils inclus                                   |
-|---------------|-------------------------------------------------|
-| `sql`         | `duckdb`, `sqlite`                              |
-| `json`        | `jq`, `jqp`                                     |
-| `yaml`        | `yq-go`                                         |
-| `xml`         | `libxml2`, `libxslt`, `saxon-he`, `xmlstarlet`  |
-| `csv`         | `xan`, `csvlens`, `csvkit`, `miller`            |
-| `compression` | `gzip`, `xz`, `bzip2`, `lz4`, `unzip`, `zip`, `gnutar` |
-| `fetch`       | `curl`                                          |
-| `misc`        | `pv`, `ncdu`                                    |
+| Module           | Outils inclus                                                           |
+|------------------|-------------------------------------------------------------------------|
+| `sql`            | `duckdb`, `sqlite`                                                      |
+| `database`       | `postgresql`, `redis`                                                   |
+| `json`           | `jq`, `jqp`, `jless`, `check-jsonschema`                                |
+| `yaml`           | `yq-go`, `check-jsonschema`                                             |
+| `xml`            | `libxml2`, `libxslt`, `saxon-he`, `xmlstarlet`                          |
+| `csv`            | `xan`, `csvlens`, `csvkit`, `miller`                                    |
+| `text`           | `gawk`, `sd`, `choose`, `moreutils`                                     |
+| `search`         | `ripgrep`, `fd`                                                         |
+| `network`        | `curl`, `wget`, `aria2`, `rsync`, `httpie`, `xh`                        |
+| `object-storage` | `awscli2`, `rclone`, `s3cmd`, `minio-client`                            |
+| `geo`            | `gdal`, `proj`                                                          |
+| `crypto`         | `openssl`, `gnupg`, `age`                                               |
+| `docs`           | `pandoc`, `glow`, `typst`, `texlive.combined.scheme-medium`             |
+| `dataviz`        | `vl-convert`, `youplot`, `gnuplot`                                      |
+| `cloud`          | `awscli2`, `rclone`                                                     |
+| `compression`    | `gzip`, `xz`, `bzip2`, `lz4`, `zstd`, `p7zip`, `unzip`, `zip`, `gnutar` |
+| `system`         | `pv`, `parallel`, `time`, `htop`                                        |
+| `misc`           | `tree`                                                                  |
