@@ -25,9 +25,9 @@ cd .datalab
 
 ### Sur Onyxia (https://datalab.sspcloud.fr)
 
-Sur Onyxia (SSP Cloud), aucun prérequis particulier : Nix n'est pas installé par défaut dans les services (VSCode, Jupyter, RStudio...), mais il est installé automatiquement. Deux options :
+Sur Onyxia (SSP Cloud), aucun prérequis particulier : Nix n'est pas installé par défaut dans les services (VSCode, Jupyter, RStudio...), mais il peut être installé via ces deux options :
 
-En cliquant sur ce [lien](https://datalab.sspcloud.fr/launcher/ide/jupyter-python?name=.datalab&version=2.5.2&s3=default&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2Feonm-pro%2F.datalab%2Frefs%2Fheads%2Fmain%2Finit.sh»&git.name=«»&git.email=«»&git.repository=«https%3A%2F%2Fgithub.com%2Feonm-pro%2F.datalab»&autoLaunch=false), un service est lancé avec Nix déjà installé et le dépôt déjà cloné.
+Automatiquement, en cliquant sur ce [lien](https://datalab.sspcloud.fr/launcher/ide/jupyter-python?name=.datalab&version=2.5.2&s3=default&init.personalInit=«https%3A%2F%2Fraw.githubusercontent.com%2Feonm-pro%2F.datalab%2Frefs%2Fheads%2Fmain%2Finit.sh»&git.name=«»&git.email=«»&git.repository=«https%3A%2F%2Fgithub.com%2Feonm-pro%2F.datalab»&autoLaunch=false), un service est lancé avec Nix déjà installé et le dépôt déjà cloné.
 
 Ou manuellement, en configurant le script d'initialisation `init.sh` qui installe Nix, active les flakes, puis clone `datalab` :
 
